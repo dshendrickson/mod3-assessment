@@ -7,7 +7,9 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      quizzes: null
+      quizzes: null,
+      scores: null,
+      scoreAccumulator:{} 
     };
   }
 
@@ -19,6 +21,17 @@ export default class App extends Component {
       });
   }
 
+  postScore() {
+   axios
+     .post('/scores', {
+       score: 20
+     })
+     .then((response) => {
+       console.log(response)
+       this.setState({ scores: response.data.score });
+     });
+  }
+
   render() {
     let quizzes = this.state.quizzes;
 
@@ -27,6 +40,8 @@ export default class App extends Component {
         { quizzes
           ? quizzes.map(quiz => <Quiz data={quiz} key={quiz.id}/>)
           : <p>Loading</p> }
+          <button className='bth-submit' onClick={ () => this.postScore() }>submit</button>
+          <p>{ this.state.scores } </p>
       </div>
     );
   }
