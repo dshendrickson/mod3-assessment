@@ -31,7 +31,8 @@ html {
 .question {
   background-color: #CBE32D;
   border-radius: 20px;
-  width: 800px;
+  min-height: 150px;
+  width: 768px;
 }
 
 .question h3 {
@@ -40,9 +41,3 @@ html {
   color: #FFF;
   padding: 20px;
 }
-
-
-
-
-
-
