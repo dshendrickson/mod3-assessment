@@ -7,8 +7,25 @@ html {
   flex-direction: column;
 }
 
+.answer {
+  color: #000;
+  margin: 0 0 30px 30px;
+}
+
 .app {
   margin: auto;
+}
+
+.btn-submit {
+  background-color: #005A31;
+  border: none;
+  border-radius: 20px;
+  color: #FFF;
+  font-size: 16px;
+  margin-top: 30px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .question {
@@ -24,10 +41,6 @@ html {
   padding: 20px;
 }
 
-.answer {
-  color: #000;
-  margin: 0 0 30px 30px;
-}
 
 
 
