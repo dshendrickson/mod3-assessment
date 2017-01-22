@@ -11,7 +11,6 @@ export default class Quiz extends Component {
 
       <div className='quiz'>
         <h1>{title}</h1>
-        <h2>Quiz Number: {id}</h2>
         { questions
           ? questions.map(question => <Question
               key={question.id}
@@ -24,4 +23,3 @@ export default class Quiz extends Component {
     );
   }
 }
-

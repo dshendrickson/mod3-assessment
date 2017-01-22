@@ -16,6 +16,15 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    this.getQuizzes();
+  }
+
+  displayScore() {
+    this.totalPoints();
+    this.getScore();
+  }
+
+  getQuizzes() {
     axios
       .get('/quizzes')
       .then((response) => {
@@ -30,9 +39,6 @@ export default class App extends Component {
       })
       .then((response) => {
         this.setState({ snarkResponse: response.data.score });
-      })
-      .then(() => {
-        this.totalPoints()
       })
   }
 
@@ -63,7 +69,7 @@ export default class App extends Component {
           /> )
           : <p>Loading</p> }
 
-          <button className='btn-submit' onClick={ () => this.getScore() }>submit</button>
+          <button className='btn-submit' onClick={ () => this.displayScore() }>submit</button>
           <div className='question'>
             <h3>Total Score: { this.state.score } </h3>
             <p>&nbsp;&nbsp;&nbsp;{ this.state.snarkResponse }</p>

@@ -16,7 +16,7 @@ export default class Answer extends Component {
                name={questionId}
                value={score}
              />
-        &nbsp;&nbsp;&nbsp;{title} &nbsp;&nbsp;(Points: {score}) {questionId}
+        &nbsp;&nbsp;&nbsp;{title}
       </div>
 
     );

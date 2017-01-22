@@ -11,8 +11,7 @@ export default class Question extends Component {
 
       <div className='question'>
         <h3>
-          {title}<br />
-          {id}
+          {title}
         </h3>
         { answers
           ? answers.map((answer, index) => <Answer
