@@ -17,6 +17,15 @@ export default class App extends Component {
 
   componentDidMount() {
     this.getQuizzes();
+    console.log(this.state.pointAccumulator);
+  }
+
+  clearAnswers() {
+    this.setState({
+      pointAccumulator: {},
+      score: 0,
+      snarkResponse: '',
+    })
   }
 
   displayScore() {
@@ -69,7 +78,22 @@ export default class App extends Component {
           /> )
           : <p>Loading</p> }
 
-          <button className='btn-submit' onClick={ () => this.displayScore() }>submit</button>
+          <button
+            className="btn btn-submit"
+            disabled={Object.keys(this.state.pointAccumulator).length === 0}
+            onClick={ () => this.displayScore() }
+            type="button"
+          >
+            submit
+          </button>
+          <button
+            className="btn btn-clear"
+            disabled={Object.keys(this.state.pointAccumulator).length === 0}
+            onClick={ () => this.clearAnswers() }
+            type="button"
+          >
+            clear
+          </button>
           <div className='question'>
             <h3>Total Score: { this.state.score } </h3>
             <p>&nbsp;&nbsp;&nbsp;{ this.state.snarkResponse }</p>
