@@ -4,7 +4,7 @@ import Question from './Question';
 export default class Quiz extends Component {
 
   render() {
-    let { id, questions, title } = { ...this.props.data }
+    let { questions, title } = { ...this.props.data }
     let setPointAccumulator = this.props.setPointAccumulator;
 
     return (
