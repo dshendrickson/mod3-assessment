@@ -11,7 +11,7 @@ export default class Answer extends Component {
     return (
 
       <div className='question-score'
-        onClick={ () => setPointAccumulator(questionId, score); clicked = true }>
+        onClick={ () => setPointAccumulator(questionId, score) }>
         <input
           className='answer'
           name={questionId}
